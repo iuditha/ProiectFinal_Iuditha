@@ -12,30 +12,24 @@ public class BasePage {
     private String BASE_URL = "https://fasttrackit-test.netlify.app/#/";
 
     public BasePage() {
-
     }
 
     public BasePage(WebDriver driver) {
-
         this.driver = driver;
     }
 
     @BeforeMethod
-
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(BASE_URL);
     }
-
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
     }
-
-
-
 }
