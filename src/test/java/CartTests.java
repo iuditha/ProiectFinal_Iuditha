@@ -50,4 +50,35 @@ public class CartTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("3"));
     }
+    @Test
+    public void LoginDinoUserAddTwoItemsInTheCartDeleteOneAndDoubleTheRemainingItem (){
+        CartPage.GetClickOnLoginButton();
+        CartPage.EnterTextInUsernameField("dino");
+        CartPage.EnterTextInPasswordField("choochoo");
+        CartPage.GetClickOnTheSecondLoginButton();
+        CartPage.AddAwesomeGraniteChipsToCart();
+        CartPage.AddAwesomeMetalChairToCart();
+        CartPage.ClickOnShoppingCart();
+        CartPage.AwesomeMetalChairClickOnBinButton();
+        CartPage.AwesomeGraniteChipsClickOnPlusButton();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("2"));
+    }
+    @Test
+    public void LoginDinoUserAddFiveItemsInTheCartUsingAlsoPlusButton (){
+        CartPage.GetClickOnLoginButton();
+        CartPage.EnterTextInUsernameField("dino");
+        CartPage.EnterTextInPasswordField("choochoo");
+        CartPage.GetClickOnTheSecondLoginButton();
+        CartPage.AddAwesomeGraniteChipsToCart();
+        CartPage.AddAwesomeGraniteChipsToCart();
+        CartPage.AddAwesomeGraniteChipsToCart();
+        CartPage.AddAwesomeMetalChairToCart();
+        CartPage.ClickOnShoppingCart();
+        CartPage.AwesomeGraniteChipsClickOnPlusButton();
+        String actualResult = driver.findElement(By.cssSelector(".shopping_cart_badge")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("5"));
+    }
 }

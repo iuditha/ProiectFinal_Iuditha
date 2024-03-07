@@ -52,5 +52,20 @@ public class CartPage extends BasePage{
     public void AddAwesomeSoftShirtToCart(){
         AwesomeSoftShirtCart.click();
     }
+    @FindBy (css ="#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-1.row-cols-lg-1.row-cols-md-1.row-cols-sm-1.row-cols-1 > div > div:nth-child(2) > div > div:nth-child(5) > button > svg > path")
+    private WebElement AwesomeMetalChairBinButton;
+    public void AwesomeMetalChairClickOnBinButton (){
+        AwesomeMetalChairBinButton.click();
+    }
+    @FindBy ( css = "#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-1.row-cols-lg-1.row-cols-md-1.row-cols-sm-1.row-cols-1 > div > div:nth-child(1) > div > div:nth-child(1) > div > button:nth-child(2) > svg")
+    private WebElement AwesomeGraniteChipsPlusButton;
+    public void AwesomeGraniteChipsClickOnPlusButton (){
+        AwesomeGraniteChipsPlusButton.click();
+    }
+    @FindBy(css = ".shopping_cart_badge")
+    private WebElement ShoppingCart;
 
+    public void ClickOnShoppingCart() {
+        ShoppingCart.click();
+    }
 }

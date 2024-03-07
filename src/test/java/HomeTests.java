@@ -26,4 +26,26 @@ public class HomeTests extends BasePage {
         System.out.println(actualResult);
         Assert.assertTrue(actualResult.contains("dino"));
     }
+    @Test
+    public void ClickOnHomePageButtonAfterLoginBeetleUserAndCheckTheResult(){
+        HomePage.GetClickOnLoginButton();
+        HomePage.EnterTextInUsernameField("beetle");
+        HomePage.EnterTextInPasswordField("choochoo");
+        HomePage.GetClickOnTheSecondLoginButton();
+        HomePage.ClickOnHomeButton();
+        String actualResult = driver.findElement(By.id("responsive-navbar-nav")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("beetle"));
+    }
+    @Test
+    public void ClickOnHomePageButtonAfterLoginTurtleUserAndCheckTheResult(){
+        HomePage.GetClickOnLoginButton();
+        HomePage.EnterTextInUsernameField("turtle");
+        HomePage.EnterTextInPasswordField("choochoo");
+        HomePage.GetClickOnTheSecondLoginButton();
+        HomePage.ClickOnHomeButton();
+        String actualResult = driver.findElement(By.id("responsive-navbar-nav")).getAttribute("innerText");
+        System.out.println(actualResult);
+        Assert.assertTrue(actualResult.contains("turtle"));
+    }
 }
