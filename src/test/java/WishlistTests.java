@@ -1,9 +1,10 @@
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.BasePage;
+import pages.WishlistPage;
 
 public class WishlistTests extends BasePage {
-    private WishlistPage WishlistPage;
+    private pages.WishlistPage WishlistPage;
 
     @BeforeMethod
     public void setUp() {
