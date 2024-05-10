@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import pages.BasePage;
 
 public class WishlistPage extends BasePage {
     public WishlistPage(WebDriver driver) {
@@ -59,12 +58,12 @@ public class WishlistPage extends BasePage {
     public void ClickOnWishlistCart (){
         WishlistCart.click();
     }
-    @FindBy ( css = "#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-4.row-cols-lg-3.row-cols-md-2.row-cols-sm-2.row-cols-1 > div:nth-child(1) > div > div.text-muted.text-center.card-footer > button:nth-child(3) > svg > path")
+    @FindBy ( xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div/div[2]/button[2]")
     private WebElement AwesomeGraniteChipsBrokenHeart;
     public void RemoveAwesomeGraniteChipsFromWishlistCart (){
         AwesomeGraniteChipsBrokenHeart.click();
     }
-    @FindBy ( css = "#root > div > div:nth-child(2) > div:nth-child(2) > div.row.row-cols-xl-4.row-cols-lg-3.row-cols-md-2.row-cols-sm-2.row-cols-1 > div:nth-child(3) > div > div.text-muted.text-center.card-footer > button:nth-child(3) > svg > path")
+    @FindBy ( xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div/div[2]/button[2]")
     private WebElement AwesomeMetalChairBrokenHeart;
     public void RemoveAwesomeMetalChairFromWishlistCart (){
         AwesomeMetalChairBrokenHeart.click();
